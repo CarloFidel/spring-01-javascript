@@ -16,7 +16,7 @@ test("01_scope-2: can modify the value of a `let` variable even in the next bloc
     // Modifica el valor de releaseName dins del bloc
     releaseName = "ES2015";
   }
-  expect(releaseName).toBe(/* INTRODUEIX LA TEVA RESPOSTA AQUÍ */);
+  expect(releaseName).toBe('ES2015');
 });
 
 test("01_scope-3: cannot modify the value of a `const` variable", () => {
