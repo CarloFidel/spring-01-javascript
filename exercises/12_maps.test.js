@@ -3,7 +3,7 @@ test("12_maps-1: has a map method", () => {
   // Afegeix una nova entrada. Utilitza 'name' com a clau i 'Aaron' com a valor
   const myMap = new Map();
   myMap.set('name', 'Aaron');
-  
+
   expect(myMap.get("name")).toBe("Aaron");
 });
 
