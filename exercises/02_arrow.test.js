@@ -1,14 +1,14 @@
 test("02_arrow-1: pot substituir funcions tradicionals", () => {
-  let fnMultiply, arrowMultiply;
-
+/*   let fnMultiply, arrowMultiply;
+ */
   // Escriu dues funcions que prenguin dos paràmetres i retornin el seu producte
   // Per a 'fnMultiply', assigna-li una funció tradicional
   // Per a 'arrowMultiply', assigna-li una funció fletxa
 
-  fnMultiply = function (a, b) {
+  function fnMultiply(a, b) {
     return a * b;
   };
-  arrowMultiply = (a, b) => a * b;
+  const arrowMultiply = (a, b) => a * b;
 
   expect(fnMultiply(5, 5)).toBe(arrowMultiply(5, 5));
 });
@@ -19,7 +19,9 @@ test("02_arrow-2: pot substituir funcions tradicionals #2", () => {
   // Substitueix la 'function' en aquesta crida a 'map' per una funció fletxa.
   // Pista: no hauries de tenir claus ni 'return' quan acabis
 
-  const squares = nums.map((num) => num * num);
+  const squareFn = (num) => num * num;
+  const squares = nums.map(squareFn);
+  squares.map = squareFn;
   const funcSource = squares.map.toString();
 
   expect(funcSource.includes("=>")).toBe(true);

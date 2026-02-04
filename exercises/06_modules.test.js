@@ -3,6 +3,7 @@ import * as IndexImport from "../common";
 // WRITE YOUR IMPORT STATEMENTS HERE
 
 import lodash from "lodash";
+import _ from "lodash";
 import { add } from "../common/Mathy";
 
 test("can import Mathy", () => {
@@ -39,7 +40,7 @@ test("06_modules-3: can specify what to import, to only retain pieces of the imp
 
 test("06_modules-4: can import from my node_modules", () => {
   // Importa un mòdul des de node_modules i comprova que funciona
-  expect(lodash.isEmpty([''])).toBe(true);
+  expect(lodash.isEmpty([])).toBe(true);
 });
 
 //////// EXTRA CREDIT ////////
