@@ -2,12 +2,12 @@ test('20_generators-1: should yield objects with value and done properties', () 
   const odds = giveMeOneOddNumber()
 
   // Comprova que els valors generats tenen les propietats value i done
-  expect(odds.next().value).toBe(/* INTRODUEIX LA TEVA RESPOSTA AQUÍ */)
-  expect(odds.next().value).toBe(/* INTRODUEIX LA TEVA RESPOSTA AQUÍ */)
-  expect(odds.next().done).toBe(/* INTRODUEIX LA TEVA RESPOSTA AQUÍ */)
+  expect(odds.next().value).toBe(1)
+  expect(odds.next().value).toBe(3)
+  expect(odds.next().done).toBe(false)
   odds.next()
-  expect(odds.next().value).toBe(/* INTRODUEIX LA TEVA RESPOSTA AQUÍ */)
-  expect(odds.next().done).toBe(/* INTRODUEIX LA TEVA RESPOSTA AQUÍ */)
+  expect(odds.next().value).toBe(9)
+  expect(odds.next().done).toBe(true)
 
   function* giveMeOneOddNumber() {
     yield 1
@@ -34,5 +34,5 @@ test('20_generators-2: can be iterated over', () => {
     sum = sum + even
   }
 
-  expect(sum).toBe(/* INTRODUEIX LA TEVA RESPOSTA AQUÍ */)
+  expect(sum).toBe(20)
 })
