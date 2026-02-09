@@ -62,11 +62,21 @@ test("02_arrow-4: pot fer que les cadenes de filtres d'arrays siguin més maneja
   ];
 
   // SUBSTITUEIX TOTES LES FUNCIONS REGULARS PER FUNCIONS FLETXA
+  const filterWidget = (d) => d.type != "Widget";
+  const filterPrice = (d) => d.price < 5;
+  const sortQty = (a, b) => a.qty - b.qty;
+  const mapName = (d) => d.name;
+
   const shoppingList = data
-    .filter((d) => d.type != "Widget") // Elimina els Widgets
-    .filter((d) => d.price < 5) // Troba només els elements restants amb preu < 5
-    .sort((a, b) => a.qty - b.qty) // Ordena per quantitat, descendent
-    .map((d) => d.name); // Extreu només el nom de cada element
+    .filter(filterWidget) // Elimina els Widgets
+    .filter(filterPrice) // Troba només els elements restants amb preu < 5
+    .sort(sortQty) // Ordena per quantitat, descendent
+    .map(mapName); // Extreu només el nom de cada element
+
+  data.filter = filterWidget;
+  shoppingList.filter = filterPrice;
+  shoppingList.sort = sortQty;
+  shoppingList.map = mapName;
 
   const filterSource1 = data.filter.toString();
   const filterSource2 = shoppingList.filter.toString();
